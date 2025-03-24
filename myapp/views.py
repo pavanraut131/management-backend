@@ -51,7 +51,7 @@ class TodoListView(viewsets.ModelViewSet):
     filterset_fields = ['project', 'status']
 
     def get_queryset(self):
-        return TodoList.objects.filter(user=self.request.user)
+        return TodoList.objects.filter(project__user=self.request.user)
     
 
 
